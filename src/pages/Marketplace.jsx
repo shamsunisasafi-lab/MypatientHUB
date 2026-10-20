@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './marketplace.css';
+import './Marketplace.css';
 import { 
   User, Stethoscope, Menu, LogOut, Search, X, Calendar, Building,
   MessageSquare, ShoppingBag, HeartPulse, Users, UserCheck, Settings,
