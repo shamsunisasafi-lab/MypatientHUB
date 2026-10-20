@@ -4,7 +4,7 @@ import Dashboard from './pages/Dashboard';
 import FindPharmacy from './pages/findPharmacy';
 import MyDependents from './pages/MyDependents';
 import FindDoctor from './pages/findDoctor';
-import FindClinic from './pages/findClinic';       // اضافه شد
+import FindClinic from './pages/FindClinic';       // اضافه شد
 import Marketplace from './pages/Marketplace';     // اضافه شد (اگر نام فایل‌ات متفاوت است، اصلاح کن)
 import Settings from './pages/Settings';           // اضافه شد (اگر نام فایل‌ات متفاوت است، اصلاح کن)
 
