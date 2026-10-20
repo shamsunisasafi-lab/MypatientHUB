@@ -4,9 +4,9 @@ import Dashboard from './pages/Dashboard';
 import FindPharmacy from './pages/findPharmacy';
 import MyDependents from './pages/MyDependents';
 import FindDoctor from './pages/findDoctor';
-import FindClinic from './pages/FindClinic';       // اضافه شد
-import Marketplace from './pages/Marketplace';     // اضافه شد (اگر نام فایل‌ات متفاوت است، اصلاح کن)
-import Settings from './pages/Settings';           // اضافه شد (اگر نام فایل‌ات متفاوت است، اصلاح کن)
+import FindClinic from './pages/FindClinic';
+import Marketplace from './pages/Marketplace';
+import Settings from './pages/Settings';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,40 +21,36 @@ function App() {
     setCurrentPage('Dashboard');
   };
 
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setCurrentPage('Dashboard');
-  };
-
   if (!isLoggedIn) {
     return <Login onLoginSuccess={handleLoginSuccess} />;
   }
 
-  // تمام صفحات پروژه‌ات اینجا پوشش داده شدند
-  const renderCurrentPage = () => {
+  const renderPage = () => {
     switch (currentPage) {
       case 'Dashboard':
-        return <Dashboard onNavigate={handleNavigate} onLogout={handleLogout} />;
+        return <Dashboard onNavigate={handleNavigate} />;
+      case 'findPharmacy':
       case 'FindPharmacy':
-        return <FindPharmacy onNavigate={handleNavigate} onLogout={handleLogout} />;
+        return <FindPharmacy onNavigate={handleNavigate} />;
       case 'MyDependents':
-        return <MyDependents onNavigate={handleNavigate} onLogout={handleLogout} />;
+        return <MyDependents onNavigate={handleNavigate} />;
+      case 'findDoctor':
       case 'FindDoctor':
-        return <FindDoctor onNavigate={handleNavigate} onLogout={handleLogout} />;
+        return <FindDoctor onNavigate={handleNavigate} />;
       case 'FindClinic':
-        return <FindClinic onNavigate={handleNavigate} onLogout={handleLogout} />;
+        return <FindClinic onNavigate={handleNavigate} />;
       case 'Marketplace':
-        return <Marketplace onNavigate={handleNavigate} onLogout={handleLogout} />;
+        return <Marketplace onNavigate={handleNavigate} />;
       case 'Settings':
-        return <Settings onNavigate={handleNavigate} onLogout={handleLogout} />;
+        return <Settings onNavigate={handleNavigate} />;
       default:
-        return <Dashboard onNavigate={handleNavigate} onLogout={handleLogout} />;
+        return <Dashboard onNavigate={handleNavigate} />;
     }
   };
 
   return (
     <div className="app-container">
-      {renderCurrentPage()}
+      {renderPage()}
     </div>
   );
 }
