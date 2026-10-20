@@ -1,0 +1,282 @@
+.dashboard-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* استایل پایه سایدبار در لپ‌تاپ */
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  background-color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+/* در لپ‌تاپ وقتی بسته است */
+.sidebar.closed {
+  display: none !important;
+}
+
+.sidebar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  background: #2563eb;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.mobile-close-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: #475569;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.nav-item.active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.help-box {
+  margin-top: auto;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  padding: 16px;
+  border-radius: 16px;
+  color: white;
+  text-align: center;
+}
+
+/* بخش اصلی */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 28px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hamburger-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #475569;
+  padding: 4px;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dashboard-content {
+  padding: 24px;
+}
+
+.welcome-banner {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  border: 1px solid #e2e8f0;
+}
+
+.welcome-banner h2 {
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.charts-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.chart-card-block {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.chart-card-block h3 {
+  font-size: 16px;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.donut-chart-flex {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.animated-ring {
+  animation: rotateAndScale 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.27) forwards;
+}
+
+@keyframes rotateAndScale {
+  0% { transform: rotate(-270deg) scale(0.2); opacity: 0; }
+  100% { transform: rotate(0deg) scale(1); opacity: 1; }
+}
+
+.donut-graphic {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.donut-hole {
+  width: 78px;
+  height: 78px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.legend-item .name { flex: 1; }
+.legend-item .value { font-weight: 600; color: #0f172a; }
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.btn-slide-up {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 10px;
+  width: fit-content;
+}
+
+/* 📱 تنظیمات اختصاصی موبایل برای سایدبار کشویی */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: -270px !important; /* پیش‌فرض در موبایل کاملاً مخفی است */
+    height: 100vh !important;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  /* وقتی در موبایل کلیک شود و کلاس open فعال شود، سایدبار روی صفحه می‌آید */
+  .sidebar.open {
+    left: 0 !important;
+    display: flex !important;
+  }
+
+  /* نادیده گرفتن حالت closed در موبایل و مدیریت آن با پنهان شدن به سمت چپ */
+  .sidebar.closed {
+    left: -270px !important;
+    display: flex !important;
+  }
+
+  .mobile-close-btn {
+    display: block !important;
+  }
+
+  .charts-grid-2x2 {
+    grid-template-columns: 1fr !important;
+  }
+}

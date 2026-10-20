@@ -1,0 +1,225 @@
+.dependents-container {
+    padding: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .dependents-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  
+  .dependents-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+  }
+  
+  .dependents-header p {
+    color: #64748b;
+    font-size: 14px;
+  }
+  
+  /* Stepper Bar */
+  .stepper-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+  }
+  
+  .step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  .step-item.active .step-circle {
+    background-color: #0284c7;
+    color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.2);
+  }
+  
+  .step-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748b;
+  }
+  
+  .step-item.active .step-label {
+    color: #0284c7;
+    font-weight: 600;
+  }
+  
+  .step-line {
+    height: 2px;
+    width: 100px;
+    background-color: #e2e8f0;
+    margin-top: -20px;
+  }
+  
+  /* Form Card */
+  .dependents-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  }
+  
+  .form-section-title {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .form-section-title h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 6px;
+  }
+  
+  .form-section-title p {
+    font-size: 13px;
+    color: #64748b;
+  }
+  
+  .form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .form-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+    outline: none;
+    background-color: #f8fafc;
+    transition: border-color 0.2s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #0284c7;
+    background-color: #ffffff;
+  }
+  
+  .date-select-group {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .form-actions-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+  }
+  
+  .btn-next-step {
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 10px 28px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn-next-step:hover {
+    background-color: #0f172a;
+  }
+
+
+  /* تنظیمات مرتب‌سازی هدر */
+.top-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 16px 24px !important;
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.header-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+.top-search-bar {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background-color: #f1f5f9 !important;
+  padding: 8px 14px !important;
+  border-radius: 20px !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+.top-search-bar input {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  font-size: 14px !important;
+}
+
+.logout-btn {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: transparent !important;
+  border: none !important;
+  color: #64748b !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+.header-icon-btn {
+  background: transparent !important;
+  border: none !important;
+  color: #64748b !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px !important;
+  border-radius: 8px !important;
+}

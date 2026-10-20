@@ -1,0 +1,477 @@
+.dashboard-container {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    background-color: #f8fafc !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  .sidebar {
+    width: 260px !important;
+    min-width: 260px !important;
+    background-color: #ffffff !important;
+    border-right: 1px solid #e2e8f0 !important;
+    padding: 24px 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-shrink: 0 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 100;
+  }
+  
+  .sidebar.closed {
+    width: 0 !important;
+    min-width: 0 !important;
+    padding: 24px 0 !important;
+    overflow: hidden !important;
+    border-right: none !important;
+    opacity: 0;
+  }
+  
+  .sidebar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logo-icon {
+    width: 38px;
+    height: 38px;
+    background: #2563eb;
+    color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+  }
+  
+  .logo-text {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 17px;
+  }
+  
+  .mobile-close-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+  }
+  
+  .nav-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  
+  .nav-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    padding: 12px 16px !important;
+    border: none !important;
+    background: transparent !important;
+    color: #1e293b !important;
+    border-radius: 30px !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  .nav-item svg {
+    color: #334155 !important;
+  }
+  
+  .nav-item span {
+    color: #1e293b !important;
+  }
+  
+  .nav-item:hover {
+    background-color: #eff6ff !important;
+    transform: translateX(4px) !important;
+  }
+  
+  .nav-item.active {
+    background: #2563eb !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+  }
+  
+  .nav-item.active span, 
+  .nav-item.active svg {
+    color: #ffffff !important;
+  }
+  
+  .main-content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0;
+  }
+  
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 28px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .hamburger-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  
+  .hamburger-btn:hover {
+    background: #f1f5f9;
+  }
+  
+  .breadcrumb span {
+    font-size: 12px;
+    color: #64748b;
+  }
+  
+  .breadcrumb h3 {
+    font-size: 18px;
+    color: #0f172a;
+    margin-top: 2px;
+  }
+  
+  .logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #475569;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .logout-btn:hover {
+    background: #f1f5f9;
+    color: #ef4444;
+  }
+  
+  .dashboard-content {
+    padding: 24px;
+  }
+  
+  /* بنر با حباب‌های نوری رنگی هماهنگ با Find Doctor */
+  .bubble-banner {
+    position: relative;
+    background: linear-gradient(135deg, #090d16 0%, #111827 50%, #1e1b4b 100%) !important;
+    color: #ffffff !important;
+    padding: 40px 30px !important;
+    border-radius: 20px !important;
+    margin-bottom: 30px !important;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.3);
+  }
+  
+  .bubble-banner::before,
+  .bubble-banner::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    z-index: 1;
+    opacity: 0.5;
+  }
+  
+  .bubble-banner::before {
+    width: 180px;
+    height: 180px;
+    background: #3b82f6;
+    top: -40px;
+    right: -20px;
+  }
+  
+  .bubble-banner::after {
+    width: 200px;
+    height: 200px;
+    background: #8b5cf6;
+    bottom: -60px;
+    left: 20%;
+  }
+  
+  .hero-inner-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-inner-content h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff !important;
+    margin-bottom: 8px;
+  }
+  
+  .hero-inner-content p {
+    font-size: 14px;
+    color: #cbd5e1 !important;
+    margin-bottom: 24px;
+  }
+  
+  .doctor-search-form {
+    display: flex;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 12px;
+    border-radius: 14px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .search-input-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+  
+  .search-input-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #0f172a;
+    background: transparent;
+  }
+  
+  .btn-current {
+    background: #0ea5e9;
+    color: #ffffff;
+    border: none;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .btn-current:hover {
+    background: #0284c7;
+  }
+  
+  .btn-search-submit {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 0 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .btn-search-submit:hover {
+    background: #1d4ed8;
+  }
+  
+  /* لایه کلی فیلترها و نقشه */
+  .clinic-main-layout {
+    display: flex;
+    gap: 24px;
+  }
+  
+  /* ستون فیلترها در سمت چپ */
+  .clinic-filter-sidebar {
+    width: 300px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    flex-shrink: 0;
+  }
+  
+  .clinic-filter-sidebar h3 {
+    font-size: 16px;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  
+  /* دراپ‌داون‌های فیلتر */
+  .filter-dropdown-box {
+    position: relative;
+    margin-bottom: 12px;
+  }
+  
+  .filter-dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #f8fafc;
+    cursor: pointer;
+    font-size: 13px;
+    color: #1e293b;
+    font-weight: 500;
+  }
+  
+  .filter-dropdown-header:hover {
+    background: #f1f5f9;
+  }
+  
+  .filter-dropdown-list {
+    position: absolute;
+    top: 105%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 10;
+    overflow: hidden;
+  }
+  
+  .filter-dropdown-list p {
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #334155;
+    cursor: pointer;
+    margin: 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  .filter-dropdown-list p:hover {
+    background: #eff6ff;
+    color: #2563eb;
+  }
+  
+  .filter-section-group {
+    margin-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 14px;
+  }
+  
+  .filter-section-group h4 {
+    font-size: 14px;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #334155;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  
+  /* بخش نقشه در سمت راست */
+  .clinic-map-container {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .map-view-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .map-tab {
+    padding: 6px 16px;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+  }
+  
+  .map-tab.active {
+    background: #ffffff;
+    color: #2563eb;
+    border-color: #2563eb;
+  }
+  
+  .map-frame-box {
+    flex: 1;
+    min-height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #cbd5e1;
+  }
+  
+  .mock-google-map {
+    width: 100%;
+    height: 100%;
+    background: #e2e8f0 url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&auto=format&fit=crop&q=80') center/cover no-repeat;
+    position: relative;
+  }
+  
+  .map-watermark {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(255,255,255,0.8);
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  
+  .map-pin {
+    position: absolute;
+    font-size: 24px;
+    cursor: pointer;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+  
+  .pin-1 { top: 30%; left: 45%; }
+  .pin-2 { top: 50%; left: 60%; }
+  .pin-3 { top: 65%; left: 52%; }
+  .pin-4 { top: 40%; left: 70%; }
